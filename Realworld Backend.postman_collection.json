@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "c20e56b3-bd5c-4a07-82ec-58caea77914c",
+		"name": "Realworld Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\" :{\n\t\t\"email\": \"mike@miniasp.com\",\n\t\t\"password\": \"miniasp\"\n\t}\n}"
+				},
+				"url": "{{url}}/api/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "新增文章",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pa2UiLCJpYXQiOjE1NTYxOTUzNDQsImV4cCI6MTU4Nzc1Mjk0NH0.fxmmYkhpFKO8NbgxnIWCnyw-leocQm_UpzdJKmS9urk"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"article\": {\n    \"title\": \"How to train your dragon\",\n    \"description\": \"Ever wonder how?\",\n    \"body\": \"You have to believe\",\n    \"tagList\": [\"reactjs\", \"angularjs\", \"dragons\"]\n  }\n}"
+				},
+				"url": "{{url}}/api/articles"
+			},
+			"response": []
+		},
+		{
+			"name": "取得所有文章",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "{{url}}/api/articles"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "97a905a2-5571-4664-adec-1ee998f8cc81",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "20db5b03-fca2-479c-ba9c-38110a383128",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cf841a37-cd3c-4094-b559-b97d0c92affd",
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
