@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "mike",
+      "password": "miniasp",
+      "email": "mike@miniasp.com",
+      "bio": "hi",
+      "image": null
+    }
+  ],
+  "articles": [
+    {
+      "slug": "How-to-train-your-dragon",
+      "title": "How to train your dragon",
+      "description": "Ever wonder how?",
+      "body": "You have to believe",
+      "tagList": [
+        "reactjs",
+        "angularjs",
+        "dragons"
+      ],
+      "createdAt": "2019-04-25T12:45:37.095Z",
+      "updatedAt": "2019-04-25T12:45:37.095Z",
+      "author": "mike"
+    }
+  ]
+}
