@@ -25,11 +25,13 @@ export const login = (req: Request, res: Response, next: NextFunction) => {
     const token = authUtils.createToken({ username: user.username });
 
     res.json({
-      username: user.username,
-      token: token,
-      email: user.email,
-      bio: user.bio,
-      image: user.image
+      user: {
+        username: user.username,
+        token: token,
+        email: user.email,
+        bio: user.bio,
+        image: user.image
+      }
     });
   }
 
