@@ -13,8 +13,20 @@ var port = process.env.PORT || 3000;
 var router = express.Router();
 
 router.post('/users/login', authController.login);
-router.get('/articles', articleController.articles);
-router.post('/articles', authUtils.verifyTokenMiddleware, articleController.createArticle);
+router.get('/articles', articleController.getArticles);
+router.get('/articles/:slug', articleController.getArticle);
+router.post(
+  '/articles',
+  authUtils.verifyTokenMiddleware,
+  articleController.createArticle
+);
+
+app.all('*', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 app.use('/api', router);
 app.listen(port);

@@ -6,10 +6,23 @@ import { User } from '../models/user';
 import { getTokenFromRequest, verifyToken } from '../utils/auth';
 import { getDatabase } from '../utils/database';
 
-export const articles = (req: Request, res: Response, next: NextFunction) => {
+export const getArticles = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const db = getDatabase();
 
   res.json({ articles: db.get('articles') });
+  next();
+};
+
+export const getArticle = (req: Request, res: Response, next: NextFunction) => {
+  const db = getDatabase();
+
+  const result = db.get('articles').find({ slug: req.params.slug });
+
+  res.json({ article: result.value() });
   next();
 };
 
@@ -37,7 +50,7 @@ export const createArticle = async (
     .value() as User;
 
   const article: Article = {
-    slug: `${slug(createArticle.title)}-${shortid.generate()}`,
+    slug: `${slug(createArticle.title.toLowerCase())}-${shortid.generate()}`,
     title: createArticle.title,
     description: createArticle.description,
     body: createArticle.body,
