@@ -1,9 +1,9 @@
 {
   "users": [{
     "id": "1",
-    "username": "mike",
-    "password": "miniasp",
-    "email": "mike@miniasp.com",
+    "username": "miniasp",
+    "password": "123456",
+    "email": "demo@miniasp.com",
     "bio": "hi",
     "image": null
   }],
