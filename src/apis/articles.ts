@@ -26,6 +26,22 @@ export const getArticle = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
+export const articleTitleExist = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const db = getDatabase();
+
+  const article = db
+    .get('articles')
+    .find({ title: req.params.title })
+    .value();
+
+  res.json({ titleExist: !!article });
+  next();
+};
+
 export const createArticle = async (
   req: Request,
   res: Response,

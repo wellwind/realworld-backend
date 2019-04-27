@@ -15,6 +15,8 @@ var router = express.Router();
 router.post('/users/login', authController.login);
 router.get('/articles', articleController.getArticles);
 router.get('/articles/:slug', articleController.getArticle);
+router.get('/articles/title-exist/:title', articleController.articleTitleExist);
+
 router.post(
   '/articles',
   authUtils.verifyTokenMiddleware,

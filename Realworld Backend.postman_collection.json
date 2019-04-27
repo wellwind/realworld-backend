@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"user\" :{\n\t\t\"email\": \"mike@miniasp.com\",\n\t\t\"password\": \"miniasp\"\n\t}\n}"
+					"raw": "{\n\t\"user\" :{\n\t\t\"email\": \"demo@miniasp.com\",\n\t\t\"password\": \"123456\"\n\t}\n}"
 				},
 				"url": {
 					"raw": "{{url}}/api/users/login",
@@ -95,6 +95,54 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "取得單篇文章",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/articles/how-to-train-your-dragon",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"articles",
+						"how-to-train-your-dragon"
+					]
+				},
+				"description": "\t"
+			},
+			"response": []
+		},
+		{
+			"name": "檢查文章標題是否存在",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/articles/title-exist/How%20to%20train%20your%20dragon",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"articles",
+						"title-exist",
+						"How%20to%20train%20your%20dragon"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -121,7 +169,7 @@
 	],
 	"variable": [
 		{
-			"id": "ad0d7f12-fac7-4c74-b037-9d1f15826363",
+			"id": "de58cab3-2a31-4061-a158-59ab0fad9008",
 			"key": "url",
 			"value": "http://localhost:3000",
 			"type": "string"
